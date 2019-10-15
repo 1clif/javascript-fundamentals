@@ -60,19 +60,19 @@ describe("Function basic", () => {
     // First is calculation function
     // Second is argument for calculation function
     // Return value is message 'Result is ###'
-    function logCalculationResult() {
-      return "Result is 17" ;
+    let logCalculationResult = function(func,a) {
+      return "Result is " + func(a);
     }
 
-    function add10(a) {
+    let add10 = function add10(a) {
       return a + 10;
     }
 
-    function mul3(a) {
+    let mul3 = function mul3(a) {
       return a * 3;
     }
 
-    expect(/* logCalculationResult(add10, 7) */).toBe("Result is 17");
-    expect(/* logCalculationResult(mul3, 7) */).toBe("Result is 21");
+    expect(logCalculationResult(add10, 7)).toBe("Result is 17");
+    expect(logCalculationResult(mul3, 7)).toBe("Result is 21");
   });
 });
